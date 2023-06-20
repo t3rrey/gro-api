@@ -10,7 +10,7 @@ app.get("/", (req: Request, res: Response) => {
 
 app.get("/scrape", async (req: Request, res: Response) => {
   await scrapePage(
-    "https://www.woolworths.com.au/shop/productdetails/36066/arnott-s-tim-tam-original-chocolate-biscuits"
+    "https://www.woolworths.com.au/shop/productdetails/666237/chicken-sandwich-chicken-sandwich-schnitzel"
   );
   res.send("scraped");
 });
@@ -18,3 +18,5 @@ app.get("/scrape", async (req: Request, res: Response) => {
 app.listen(port, () => {
   console.log(`[Server]: I am running at https://localhost:${port}`);
 });
+
+export default app;

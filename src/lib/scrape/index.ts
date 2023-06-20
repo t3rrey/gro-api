@@ -25,9 +25,11 @@ export const scrapePage = async (url: string): Promise<NewFood | undefined> => {
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
   });
   const page = await browser.newPage();
+
   await page.setUserAgent(
-    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36"
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_0) AppleWebKit/537.36 (KHTML, like Gecko) Firefox/113.0"
   );
+
   await page.goto(url);
 
   if (page.url().includes("woolworths.com.au")) {

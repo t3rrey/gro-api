@@ -22,6 +22,7 @@ export const scrapePage = async (url: string): Promise<NewFood | undefined> => {
   const browser = await puppeteer.launch({
     defaultViewport: null,
     headless: "new",
+    args: ["--no-sandbox", "--disable-setuid-sandbox"],
   });
   const page = await browser.newPage();
   await page.setUserAgent(
